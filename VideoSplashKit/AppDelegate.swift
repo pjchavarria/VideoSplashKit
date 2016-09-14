@@ -14,26 +14,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   let viewController = ViewController()
 
-  func application(application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+  func application(_ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    self.window = UIWindow(frame: UIScreen.main.bounds)
     self.window!.rootViewController = viewController
-    self.window!.backgroundColor = UIColor.whiteColor()
+    self.window!.backgroundColor = UIColor.white
     self.window!.makeKeyAndVisible()
     return true
   }
 
-  func applicationWillResignActive(application: UIApplication) {  }
+  func applicationWillResignActive(_ application: UIApplication) {  }
 
-  func applicationDidEnterBackground(application: UIApplication) {
+  func applicationDidEnterBackground(_ application: UIApplication) {
     viewController.pauseVideo()
   }
 
-  func applicationWillEnterForeground(application: UIApplication) {
+  func applicationWillEnterForeground(_ application: UIApplication) {
     viewController.playVideo()
   }
 
-  func applicationDidBecomeActive(application: UIApplication) { }
+  func applicationDidBecomeActive(_ application: UIApplication) { }
 
-  func applicationWillTerminate(application: UIApplication) { }
+  func applicationWillTerminate(_ application: UIApplication) { }
 }

@@ -21,9 +21,9 @@ class VideoSplashKitTests: XCTestCase {
   }
 
   func testVideoCut(){
-    let expectation = expectationWithDescription("VideoCutter")
+    let expectation = self.expectation(description: "VideoCutter")
     let videoCutter = VideoCutter()
-    let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("test", ofType: "mp4")!)
+    let url = URL(fileURLWithPath: Bundle.main.path(forResource: "test", ofType: "mp4")!)
     videoCutter.cropVideoWithUrl(
       videoUrl: url,
       startTime: 11.0,
@@ -38,6 +38,6 @@ class VideoSplashKitTests: XCTestCase {
         }
       }
     }
-    self.waitForExpectationsWithTimeout(5.0, handler: nil)
+    self.waitForExpectations(timeout: 5.0, handler: nil)
   }
 }
